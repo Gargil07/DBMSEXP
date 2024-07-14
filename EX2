@@ -1,0 +1,21 @@
+--CREATE TABLE tablename (
+
+--RegNo INT,
+
+--Name VARCHAR(50),
+
+--Desination VARCHAR(50),
+
+--Gender VARCHAR(50),
+
+--)
+
+--INSERT INTO tablename VALUES
+
+--(006, 'Sarvesh sharma', 'student', 'male', 100)
+
+--SELECT *from tablename;
+
+--UPDATE tablename SET RegNo=04 WHERE Salary=100
+
+--DELETE from tablename Where RegNo=4
