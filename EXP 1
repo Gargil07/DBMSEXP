@@ -1,0 +1,6 @@
+ 
+CREATE TABLE tablename ( 
+Column 1 datatype, 
+Column 2 datatype, 
+Column n datatype  
+) ;  
