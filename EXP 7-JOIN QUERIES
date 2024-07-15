@@ -1,0 +1,30 @@
+create table STUD (RegNo INT, Name varchar(30)); 
+INSERT INTO STUD VALUES (01,'Shushrut Kumar'); 
+INSERT INTO STUD VALUES (02,'Viren Parmar'); 
+INSERT INTO STUD VALUES (03,'Vidhi Rai'); 
+INSERT INTO STUD VALUES (04,'Param Shah'); 
+INSERT INTO STUD VALUES (05,'Jakin Patel'); 
+INSERT INTO STUD VALUES (06,'Don Draper'); 
+select * from STUD;
+
+create table GRADE (RegNo INT, grade varchar(1)); 
+INSERT INTO GRADE VALUES (01,'O'); 
+INSERT INTO GRADE VALUES (02,'A'); 
+INSERT INTO GRADE VALUES (03,'B'); 
+INSERT INTO GRADE VALUES (04,'C'); 
+INSERT INTO GRADE VALUES (05,'D'); 
+INSERT INTO GRADE VALUES (06,'E'); 
+select * from GRADE ; 
+
+create table RESULT (RegNo INT , Result varchar(4)); 
+INSERT INTO RESULT VALUES (01,'PASS'); 
+INSERT INTO RESULT VALUES (02,'PASS'); 
+INSERT INTO RESULT VALUES (03,'PASS'); 
+INSERT INTO RESULT VALUES (04,'PASS'); 
+INSERT INTO RESULT VALUES (05,'FAIL'); 
+INSERT INTO RESULT VALUES (06,'FAIL'); 
+select * from RESULT; 
+
+select name, grade from STUD left outer join GRADE on STUD.RegNo = GRADE.RegNo;
+select STUD.RegNo, Name, Result from STUD right outer join RESULT on STUD.RegNo = RESULT.RegNo;
+select Name from STUD full outer join GRADE on STUD. RegNo = GRADE. RegNo; 
