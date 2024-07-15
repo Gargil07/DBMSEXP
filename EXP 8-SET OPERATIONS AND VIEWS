@@ -1,0 +1,78 @@
+CREATE TABLE Students2021(Name VARCHAR(15),TotalMark INT); 
+CREATE TABLE Students2022(Name VARCHAR(15),TotalMark INT); 
+CREATE TABLE Students2023(Name VARCHAR(15),TotalMark INT); 
+INSERT INTO Students2021 VALUES('Robert',1063); 
+INSERT INTO Students2021 VALUES('John',1070); 
+INSERT INTO Students2021 VALUES('Rose',1032); 
+INSERT INTO Students2021 VALUES('Abel',1002);
+INSERT INTO Students2022 VALUES('Robert',1063); 
+INSERT INTO Students2022 VALUES('Rose',1032); 
+INSERT INTO Students2022 VALUES('Boss',1086); 
+INSERT INTO Students2022 VALUES('Marry',1034); 
+INSERT INTO Students2023 VALUES('Boss',1086); 
+INSERT INTO Students2023 VALUES('Marry',1034); 
+INSERT INTO Students2023 VALUES('Boris',1087); 
+INSERT INTO Students2023 VALUES('Mar n',1035); 
+INSERT INTO Students2023 VALUES('Robert',1063); 
+INSERT INTO Students2023 VALUES('Abel',1002); 
+#desc students2023; 
+
+Select * from students2021; 
+Select * from students2022; 
+Select * from Students2023;
+SELECT Name,TotalMark FROM students2022 UNION ALL  
+SELECT Name,TotalMark FROM students2023 ;  
+SELECT Name,TotalMark FROM students2022 UNION  
+SELECT Name,TotalMark FROM students2023 ; 
+SELECT Name,TotalMark FROM students2022 INTERSECT  
+SELECT Name,TotalMark FROM students2023 ; 
+SELECT Name,TotalMark FROM students2022 MINUS 
+SELECT Name,TotalMark FROM students2023 ; 
+
+
+/******** To Perform VIEWS opera on**********/ 
+create table studentsdetails( Studid BIGINT ,name varchar(15), location on varchar(10)); 
+INSERT INTO Studentsdetails VALUES(101,'Abel','delhi'); 
+INSERT INTO Studentsdetails VALUES(102,'John','mumbai'); 
+INSERT INTO Studentsdetails VALUES(103,'Rose','chennai'); 
+INSERT INTO Studentsdetails VALUES(104,'Abel','delhi'); 
+INSERT INTO Studentsdetails VALUES(105,'Marry','bangalore'); 
+INSERT INTO Studentsdetails VALUES(106,'Boris','andhra'); 
+INSERT INTO Studentsdetails VALUES(107,'Mar n','kerala'); 
+create table studentsmarks( Studid BIGINT ,name varchar(15), mark BIGINT, age INT); 
+INSERT INTO Studentsmarks VALUES(101,'Abel',100,21); 
+INSERT INTO Studentsmarks VALUES(102,'John',99,20); 
+INSERT INTO Studentsmarks VALUES(103,'Rose',98,21); 
+INSERT INTO Studentsmarks VALUES(104,'Abel',100,21); 
+INSERT INTO Studentsmarks VALUES(105,'Marry',96,20); 
+INSERT INTO Studentsmarks VALUES(106,'Boris',95,20); 
+CREATE VIEW DetailsView AS SELECT NAME, Location on FROM studentsdetails  
+WHERE studid < 105; 
+SELECT * FROM DetailsView;
+
+CREATE VIEW StudentNames AS SELECT StudiD, NAME FROM StudentsDetails  
+ORDER BY NAME; 
+SELECT * FROM StudentNames; 
+
+CREATE VIEW MarksView AS SELECT StudentsDetails.NAME, StudentsDetails.loca on,  
+StudentsMarks.MARK FROM StudentsDetails, StudentsMarks 
+WHERE StudentsDetails.NAME = StudentsMarks.NAME; 
+SELECT * FROM MarksView; 
+
+DROP VIEW MarksView; 
+SELECT * FROM MarksView;
+
+CREATE OR REPLACE VIEW MarksView AS 
+SELECT StudentsDetails.NAME, StudentsDetails.loca on, StudentsMarks.MARK,  
+StudentsMarks.AGE 
+FROM StudentsDetails, StudentsMarks 
+WHERE StudentsDetails.NAME = StudentsMarks.NAME; 
+SELECT * FROM MarksView;  
+
+INSERT INTO DetailsView(NAME, loca on) VALUES('Suresh','Gurgaon'); 
+INSERT INTO DetailsView(NAME, loca on) VALUES('Suraj','assam'); 
+SELECT * FROM DetailsView; 
+
+DELETE FROM DetailsView 
+WHERE NAME='Abel'; 
+SELECT * FROM DetailsView 
