@@ -1,0 +1,21 @@
+CREATE TABLE emp(Id integer PRIMARY KEY, Name text, Age int, Gender text, Shift 
+char,salary integer); 
+INSERT INTO emp VALUES(1,'Bob', 23, 'Male', 'e',4000); 
+INSERT INTO emp VALUES(2,'Julia', 25, ' Female', 'm',6000); 
+INSERT INTO emp VALUES(3,'Johnathon', 31, 'Male', 'e',7000); 
+INSERT INTO emp VALUES(4,'Alice', 20, 'Female', 'm',8000); 
+INSERT INTO emp VALUES(5,'Rick', 32, 'Male', 'e,10000'); 
+INSERT INTO emp VALUES(6,'Stacy', 27, 'Female', 'm',80000); 
+COMMIT; 
+
+
+/*Queries*/ 
+SELECT Name, ASCII(Name) AS NumCodeOfFirstChar FROM emp; 
+SELECT COUNT(Name) AS NumberOfemp FROM emp; 
+SELECT AVG(Age) AS AverageAge FROM emp; 
+SELECT SUM(salary) AS Totalsal FROM emp; 
+SELECT MAX(Age) AS MaximumAge FROM emp; 
+SELECT MIN(Age) AS MinimumAge FROM emp; 
+SELECT MAX(salary) AS Maximumsal FROM emp; 
+SELECT MIN(salary) AS Minimumsal FROM emp; 
+SELECT VARIANCE(salar) "Variancesal" FROM emp; 
