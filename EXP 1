@@ -1,6 +1,12 @@
  
 CREATE TABLE tablename ( 
-Column 1 datatype, 
-Column 2 datatype, 
-Column n datatype  
-) ;  
+RegNo INT, 
+Name Varchar(50),
+Destination Varchar(50),
+Gender Varchar(50),
+)
+ALTER TABLE tablename ADD Salary INT;
+TRUNCATE TABLE tablename
+
+INSERT INTO tablename VALUES
+(006,'Parth','student','male',100)
