@@ -1,0 +1,31 @@
+DECLARE @val int=5;
+WHILE @val<11
+Begin
+Set @val=@val+1;
+if @val=8
+Begin
+continue;
+end
+print cast(@val as varchar);
+end;
+
+DECLARE @val INT=1;
+WHILE @val<=10
+Begin
+print cast(@val as varchar)
+set @val=@val+1;
+end;
+
+DECLARE @val int=3;
+WHILE @val<=12
+Begin
+print cast(@val as varchar);
+set @val=@val+1;
+if @val=7
+Begin
+set @val=@val+1;
+GOTO statement1;
+end
+end
+statement1:
+print'Jumped to statement 1'
